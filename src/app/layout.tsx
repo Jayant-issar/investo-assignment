@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/theme-toggler";
+import { Toaster } from "@/components/ui/sonner";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       
       >
         <body className={`${manrope.className} font-sans antialiased`}>
+          <Toaster/>
           <div className="fixed top-5 right-5 z-20">
             <ModeToggle />
           </div>
