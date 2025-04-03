@@ -80,7 +80,7 @@ const Triangle = ({ w = 6, h = 10, direction = 'right', color = '#44a6e8' }) => 
     <svg width={w} height={h}>
       
       <polygon points={
-        //@ts-ignore
+        //@ts-expect-error
         points[direction]
         .join(' ')} fill={color} />
       Sorry, your browser does not support inline SVG.
