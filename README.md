@@ -31,6 +31,7 @@ Users should be able to:
 
 ![Desktop View (light mode)](./public/screenshots/1.png)
 ![Desktop View (dark mode)](./public/screenshots/4.png)
+![Desktop View with modal (dark mode)](./public/screenshots/6.png)
 ![Mobile View (light mode)](./public/screenshots/7.png)
 ![Mobile View (dark mode)](./public/screenshots/8.png)
 
@@ -68,6 +69,6 @@ Will be using this experince to build more projects like this in the future, spe
 ## Author
 
 - Website - [Jayant Issar](https://jayant-portfolio.pages.dev/)
-- Twitter - [@yourusername](https://www.twitter.com/dehatiCoder)
+- Twitter - [@dehatiCoder](https://www.twitter.com/dehatiCoder)
 
 
