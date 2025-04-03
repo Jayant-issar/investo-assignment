@@ -1,11 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Card,CardAction,CardContent,CardDescription,CardFooter,CardHeader,CardTitle } from '../ui/card'
+import { Card,CardContent,CardFooter, } from '../ui/card'
 import { Slider } from '../ui/slider'
 import { Switch } from '../ui/switch'
 import { Check } from 'lucide-react'
-import { Button } from '../ui/button'
-import { stringify } from 'querystring'
 import CtaButton from '../ctaButton'
 
 type Props = {}
