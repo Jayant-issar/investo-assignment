@@ -36,7 +36,7 @@ const CtaButton = (props: Props) => {
   return (
     <>
       <Button 
-        className='w-36 rounded-full bg-[color:hsl(227,35%,25%)] hover:bg-[color:hsl(227,35%,25%)] hover:text-white text-[color:hsl(226,100%,87%)] cursor-pointer'
+        className='w-36 rounded-full bg-[color:hsl(227,35%,25%)] hover:bg-[color:hsl(227,35%,25%)] dark:bg-[color:hsl(174,86%,45%)] dark:hover:bg-[color:hsl(174,86%,35%)] hover:text-white dark:text-[color:hsl(227,35%,25%)] text-[color:hsl(226,100%,87%)] cursor-pointer'
         onClick={() => setOpen(true)}
       >
         Start my trial
