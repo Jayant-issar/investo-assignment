@@ -1,34 +1,47 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card,CardAction,CardContent,CardDescription,CardFooter,CardHeader,CardTitle } from '../ui/card'
-import ToogleSwitch from '../toogleSwitch'
 import { Slider } from '../ui/slider'
 import { Switch } from '../ui/switch'
 import { Check } from 'lucide-react'
 import { Button } from '../ui/button'
+import { stringify } from 'querystring'
 
 type Props = {}
 
 const PricingCard = (props: Props) => {
   const [isYearly, setIsYearly] = useState(false);
   const [pageViews, setPageViews] = useState(100);
-  const basePrice = "16.00";
-  const finalPrice = isYearly ? Number(basePrice) * 0.8 : basePrice;
+  const [price, setPrice] = useState<string>("16.00");
+  const [finalPrice, setFinalPrice] = useState<string>("16.00");
+  
+
+  useEffect(()=>{
+    const newPrice = pageViews >= 990 ? "36.00" : pageViews >= 500 ? "24.00" : pageViews >= 100 ? "16.00" :pageViews>50 ? "12.00" : "8.00";
+    setPrice(newPrice);
+    setFinalPrice(isYearly ? (Number(newPrice) * 0.75).toString()+".00" : newPrice);
+    
+  },[pageViews,isYearly])
+
   return (
     <div className=''>
-      <Card>
-        <CardContent className=' flex flex-col gap-4 md:gap-8'>
+      <Card className='shadow-2xl'>
+        <CardContent className=' flex flex-col gap-4 md:gap-10'>
           {/* card data */}
           <div className='flex flex-col gap-y-6 justify-between items-center text-sm md:flex-row '>
-            <span className='text-[color:hsl(225,20%,60%)] tracking-[0.15rem] font-semibold'>{pageViews}K PAGEVIEWS</span>
+            <div className='text-[color:hsl(225,20%,60%)] tracking-[0.13rem] font-semibold flex items-center gap-1'>
+              <span className=' flex'>{pageViews<1000 ? pageViews : "1"} <span>{pageViews<1000 ? "k" : "M"}</span></span>
+              <span>PAGEVIEWS</span>
+            </div>
+            
             {/* slider, when view port is less than md */}
               <div className='w-full px-2'>
                 <Slider
                 value={[pageViews]}
                 onValueChange={(value) => setPageViews(value[0])}
-                max={200}
+                max={1000}
                 min={10}
-                step={1}
+                step={10}
                 className='w-full md:hidden'
                 />
               </div>
@@ -44,9 +57,9 @@ const PricingCard = (props: Props) => {
             <Slider
             value={[pageViews]}
             onValueChange={(value) => setPageViews(value[0])}
-            max={200}
+            max={1000}
             min={10}
-            step={1}
+            step={10}
             className='w-full hidden md:flex'
             />
           </div>
@@ -75,7 +88,7 @@ const PricingCard = (props: Props) => {
           
         </CardContent>
 
-        <CardFooter className=' flex-col md:flex-row items-center justify-between border-t-2 mt-12'>
+        <CardFooter className=' flex-col md:flex-row items-center justify-between border-t-2 '>
         <div className=" pt-8 p-4 ">
             <div className="gap-3 text-sm text-[color:hsl(225,20%,60%)] font-medium flex flex-col items-center md:items-start">
               <div className="flex items-center gap-2">
@@ -93,8 +106,9 @@ const PricingCard = (props: Props) => {
             </div>
         </div>
 
-        <Button className='w-36 rounded-full bg-[color:hsl(227,35%,25%)] text-[color:hsl(226,100%,87%)]
+        <Button className='w-36 rounded-full bg-[color:hsl(227,35%,25%)] hover:bg-[color:hsl(227,35%,25%)] hover:text-white text-[color:hsl(226,100%,87%)]
         cursor-pointer
+
         '>Start my trial</Button>
         </CardFooter>
         
