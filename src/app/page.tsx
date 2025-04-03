@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
       {/* Pricing Card */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/4 z-20 w-full max-w-xl px-4 sm:px-0 mx-auto ">
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/4 z-20 w-full max-w-xl px-4 sm:px-0 mx-auto animate-in fade-in-20 duration-1000">
         <PricingCard/>
       </div>
     </div>
