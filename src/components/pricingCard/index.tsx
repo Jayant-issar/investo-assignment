@@ -6,6 +6,7 @@ import { Switch } from '../ui/switch'
 import { Check } from 'lucide-react'
 import { Button } from '../ui/button'
 import { stringify } from 'querystring'
+import CtaButton from '../ctaButton'
 
 type Props = {}
 
@@ -106,10 +107,7 @@ const PricingCard = (props: Props) => {
             </div>
         </div>
 
-        <Button className='w-36 rounded-full bg-[color:hsl(227,35%,25%)] hover:bg-[color:hsl(227,35%,25%)] hover:text-white text-[color:hsl(226,100%,87%)]
-        cursor-pointer
-
-        '>Start my trial</Button>
+        <CtaButton/>
         </CardFooter>
         
       </Card>
