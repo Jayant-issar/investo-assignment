@@ -4,7 +4,7 @@ const HeroText = () => {
   return (
     <div className="relative">
         <div className='relative z-10 flex flex-col items-center gap-3 pt-15 p-4 mt-14'>
-            <h2 className=" text-[color:hsl(227,35%,25%)] text-3xl font-bold">
+            <h2 className=" text-[color:hsl(227,35%,25%)] text-3xl font-bold text-center">
                 Simple, traffic-based pricing 
             </h2>
             <h5 className="relative z-10 text-[#858aa0] font-medium">
